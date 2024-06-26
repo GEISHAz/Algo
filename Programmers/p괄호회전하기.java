@@ -1,31 +1,34 @@
-import java.util.Stack;
+import java.util.*;
 
-public class p괄호회전하기 {
-    static public int solution(String s) {
+class p괄호회전하기 {
+    public int solution(String s) {
         int answer = 0;
+        Queue<Character> q = new ArrayDeque<>();
+        for(int i = 0 ; i < s.length(); i++)
+            q.offer(s.charAt(i));
 
-        for (int i = 0; i < s.length(); i++) {
-            Stack<Character> stack = new Stack<>();
-            String str = s.substring(i, s.length()) + s.substring(0, i);
-            for (int j = 0; j < str.length(); j++) {
-                char c = str.charAt(j);
-                if (stack.isEmpty()) {
-                    stack.push(c);
-                } else if (c == ')' && stack.peek() == '(') {
-                    stack.pop();
-                } else if (c == '}' && stack.peek() == '{') {
-                    stack.pop();
-                } else if (c == ']' && stack.peek() == '[') {
-                    stack.pop();
-                } else {
-                    stack.push(c);
-                }
-            }
-            if (stack.isEmpty()) {
+        for(int i = 0 ; i < s.length(); i++){
+            if(isValid(q))
                 answer++;
+            q.offer(q.poll());
+        }
+        return answer;
+    }
+    public boolean isValid(Queue<Character> q){
+        Stack<Character> st = new Stack<>();
+        for(Character c : q){
+            if(c == '(' || c == '{' || c == '[')
+                st.add(c);
+            else{
+                if(st.isEmpty())
+                    return false;
+                Character top = st.pop();
+                if((c == ')' && top != '(') ||
+                        (c == '}' && top != '{') ||
+                        (c == ']' && top != '['))
+                    return false;
             }
         }
-
-        return answer;
+        return st.isEmpty();
     }
 }
