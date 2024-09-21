@@ -102,7 +102,7 @@ FROM FOOD_PRODUCT
 ORDER BY PRICE DESC
 LIMIT 1;
 
-20240919===========================================
+20240921===========================================
 
 # SQL Lv 1. 흉부외과 또는 일반외과 의사 목록 출력하기
 
@@ -138,3 +138,29 @@ SELECT ANIMAL_ID,NAME, DATE_FORMAT(DATETIME,"%Y-%m-%d") AS "날짜"
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID;
 
+20240922===========================================
+
+-- SQL Lv 2. 고양이와 개는 몇 마리 있을까
+
+SELECT ANIMAL_TYPE,COUNT(*) AS "count"
+FROM ANIMAL_INS
+GROUP BY ANIMAL_TYPE
+ORDER BY ANIMAL_TYPE;
+
+-- SQL Lv 2. 중성화 여부 파악하기
+
+SELECT ANIMAL_ID,NAME, 
+    CASE WHEN SEX_UPON_INTAKE LIKE '%Neutered%' THEN 'O'
+    WHEN SEX_UPON_INTAKE LIKE '%Spayed%' THEN 'O'
+    ELSE 'X' END 
+    AS "중성화"
+FROM ANIMAL_INS
+ORDER BY ANIMAL_ID;
+
+-- SQL Lv 2. 입양 시각 구하기(1)
+
+SELECT TO_NUMBER(TO_CHAR(DATETIME,'HH24')) AS HOUR,COUNT(*) AS COUNT
+FROM ANIMAL_OUTS
+WHERE TO_CHAR(DATETIME,'HH24') BETWEEN 9 AND 19
+GROUP BY TO_CHAR(DATETIME,'HH24')
+ORDER BY HOUR;
