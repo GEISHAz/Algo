@@ -1,30 +1,30 @@
-# 📝 Algorithm & SQL Practice Repository
+# 📝 알고리즘 & SQL 연습 저장소
 
-**Welcome!**  
-This repository is where I track my daily progress in solving **Algorithm** and **SQL** problems.  
-It's a personal commitment to improve my problem-solving skills step by step.
+**안녕하세요!**  
+이 저장소는 제가 **알고리즘**과 **SQL** 문제 풀이를 기록하는 공간입니다.  
+꾸준한 연습을 통해 문제 해결 능력을 향상시키고자 합니다.
 
-## 🌟 Daily Goals
-- 🧠 **1 Algorithm problem** every day!
-- 📊 **3 or more SQL problems** every day!
+## 🌟 하루 목표
+- 🧠 매일 **알고리즘 문제 1개** 풀기!
+- 📊 매일 **SQL 문제 3개 이상** 풀기!
 
-## 🏆 Progress and Efforts
-I'm working hard to push my limits, continuously learning and improving.  
-You can find solutions to various problems that I've tackled here. Every day brings a new challenge, and with every solution, I grow more confident in my coding and querying skills.
+## 🏆 진행 상황 및 노력
+매일 새로운 도전에 직면하며, 이를 해결하는 과정을 통해 조금씩 성장하고 있습니다.  
+이 저장소에는 그동안 풀어온 문제들의 풀이가 담겨 있으며, 꾸준한 노력을 통해 더 나은 개발자로 성장하는 과정을 담고자 합니다.
 
-## 📂 Repository Structure
-- **/algorithms**: Contains solutions to various algorithm problems.
-- **/sql**: Contains my SQL queries and solutions for database-related exercises.
+## 📂 저장소 구조
+- **/algorithms**: 다양한 알고리즘 문제 풀이를 모아둔 폴더
+- **/sql**: SQL 문제 풀이와 쿼리를 저장한 폴더
 
-## 🔧 Tech Stack
-- **Languages**:  
+## 🔧 기술 스택
+- **사용 언어**:  
   ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)  
-- **Database**:  
+- **데이터베이스**:  
   ![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ---
 
-I strive to stay consistent and keep pushing forward, one problem at a time.  
-Feel free to explore, and if you have any suggestions or feedback, don't hesitate to reach out!
+매일 하나씩 꾸준히 도전하고, 한 단계씩 나아가고 있습니다.  
+관심 있게 지켜봐 주시고, 피드백이나 제안이 있으시면 언제든지 알려주세요!
 
-> “Consistency is more important than perfection.” - Let's keep improving, every single day! 🚀
+> “완벽보다 중요한 것은 꾸준함이다.” - 매일매일 성장해 나가겠습니다! 🚀
