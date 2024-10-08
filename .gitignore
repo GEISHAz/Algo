@@ -1,0 +1,9 @@
+# IntelliJ IDEA 관련 파일들
+.idea/
+*.iml
+
+# 컴파일된 클래스 파일들
+*.class
+
+# 빌드 아티팩트 폴더
+out/
