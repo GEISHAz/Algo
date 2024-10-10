@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 
-public class Main {
+public class b30804 {
     // start 지점 당기기
     private static int answer = Integer.MIN_VALUE, start = 0;;
     private static HashMap<String,Integer> map = new HashMap<>();
@@ -22,9 +22,7 @@ public class Main {
         for(int i = 0 ; i < N ; i++) {
             //end 올리기 1회
             map.put(input[i], map.getOrDefault(input[i], 0) + 1);
-
             if(map.size() <= 2) answer = Math.max(i-start+1,answer);
-
             while(map.size() > 2){
                 removeStart(input);
             }
