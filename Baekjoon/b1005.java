@@ -1,9 +1,12 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Queue;
 
-public class Main {
+public class b1005 {
     private static Queue<Integer> q;
     private static int[] inDegree, times, buildCost;
     private static boolean[] isVisited;
