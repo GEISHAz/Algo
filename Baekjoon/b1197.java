@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-public class Main {
+public class b1197 {
     private static int[] p;
     private static int  find(int a){
         if(p[a]!=a)
