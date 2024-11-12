@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.Arrays;
 
-public class Main {
+public class b1509 {
     static int len;
     static boolean[][] repeat;
     static int dp[]; //첫 문자 ~ i 인덱스 번째 문자까지 회문 개수 최소값 저장
