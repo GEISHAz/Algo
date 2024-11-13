@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class b1644 {
 
     private static int[] getArr(int N){
         boolean[] isPrime = new boolean[N + 1];
