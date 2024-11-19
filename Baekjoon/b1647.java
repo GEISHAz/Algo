@@ -1,58 +1,58 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Comparator;
+import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class b1647 {
 
-    private static int[] p;
-    private static PriorityQueue<int[]> pq;
-
-    private static int find(int a){
-        if(p[a] == a) return a;
-        else return p[a] = find(p[a]);
-    }
-
-    private static void union(int a, int b){
-        p[find(a)] = find(b);
-    }
-
-    private static int calculate(){
-        int max = Integer.MIN_VALUE, sum = 0;
-
-        while(!pq.isEmpty()){
-            int[] arr = pq.poll();
-            if(find(arr[0]) != find(arr[1])){
-                union(arr[0], arr[1]);
-                max = Math.max(max, arr[2]);
-                sum += arr[2];
-            }
-        }
-        return sum - max;
-    }
+    private static int[] degrees;
+    private static ArrayList<Integer>[] lists;
+    private static PriorityQueue<Integer> pq;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-
+        StringBuilder sb = new StringBuilder();
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
-        p = new int[N+1];
-        pq = new PriorityQueue<>(Comparator.comparingInt(o -> o[2]));
+        degrees = new int[N+1];
+        lists = new ArrayList[N+1];
 
-        for(int i = 0 ; i < N ; i++){
-            p[i] = i;
+        for (int i = 0; i <= N; i++) {
+            lists[i] = new ArrayList<>();
         }
 
-        for(int i = 0 ; i < M ; i++){
+        for(int i = 1 ; i <= M ; i++){
             st = new StringTokenizer(br.readLine());
-            int[] arr = {Integer.parseInt(st.nextToken())
-                    ,Integer.parseInt(st.nextToken())
-                    ,Integer.parseInt(st.nextToken())};
-            pq.add(arr);
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            degrees[b] += 1;
+            lists[a].add(b);
         }
-        System.out.println(calculate());
+
+        pq = new PriorityQueue<>();
+
+        // 모든 노드를 탐색하여 진입 차수가 0인 노드를 초기화 시 한 번에 큐에 추가
+        for(int i = 1 ; i <= N ; i++){
+            if(degrees[i] == 0){
+                pq.add(i);
+            }
+        }
+
+        // 위상 정렬 수행
+        while (!pq.isEmpty()){
+            int now = pq.poll();
+            sb.append(now).append(" ");
+            for (int num : lists[now]){
+                degrees[num] -= 1;
+                if (degrees[num] == 0) {
+                    pq.add(num);
+                }
+            }
+        }
+
+        System.out.println(sb);
     }
 }
