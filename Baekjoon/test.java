@@ -3,12 +3,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
-    private static int N, bMax, wMax;
-    private static int[][] map;
+public class test {
+    public static int N, bMax, wMax;
+    public static int[][] map;
 
-    private static int[] dx = {-1, 1, -1, 1};
-    private static int[] dy = {-1, -1, 1, 1};
+    public static int[] dx = {-1, 1, -1, 1};
+    public static int[] dy = {-1, -1, 1, 1};
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -16,8 +16,6 @@ public class Main {
 
         N = Integer.parseInt(br.readLine());
         map = new int[N][N];
-        bMax = 0;
-        wMax = 0;
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
@@ -26,17 +24,17 @@ public class Main {
             }
         }
 
-        dfs(new boolean[N][N], 0, 0, 0, true); // 흑색 탐색
-        dfs(new boolean[N][N], 1, 0, 0, false); // 백색 탐색
+        dfs(new boolean[N][N], 0, 0, 0, true);
+        dfs(new boolean[N][N], 0, 1, 0, false);
 
         System.out.println(bMax + wMax);
     }
 
-    private static void dfs(boolean[][] visited, int x, int y, int sum, boolean isBlack) {
+    public static void dfs(boolean[][] now, int y, int x, int cnt, boolean isBlack) {
         if (isBlack) {
-            bMax = Math.max(bMax, sum);
+            bMax = Math.max(cnt, bMax);
         } else {
-            wMax = Math.max(wMax, sum);
+            wMax = Math.max(cnt, wMax);
         }
 
         if (x >= N) {
@@ -46,26 +44,26 @@ public class Main {
 
         if (y >= N) return;
 
-        if (check(visited, y, x)) {
-            visited[y][x] = true;
-            dfs(visited, x + 2, y, sum + 1, isBlack); // 비숍을 놓는 경우
-            visited[y][x] = false;
+        if (check(now, y, x)) {
+            now[y][x] = true;
+            dfs(now, y, x + 2, cnt + 1, isBlack);
+            now[y][x] = false;
         }
-        dfs(visited, x + 2, y, sum, isBlack); // 비숍을 놓지 않는 경우
+
+        dfs(now, y, x + 2, cnt, isBlack);
     }
 
-    private static boolean check(boolean[][] visited, int y, int x) {
-        if (map[y][x] == 0) return false; // 비숍을 놓을 수 없는 자리
+    public static boolean check(boolean[][] now, int y, int x) {
+        if (map[y][x] == 0) return false;
 
         for (int i = 0; i < 4; i++) {
             int yy = y, xx = x;
 
-            while (true) { // 대각선 끝까지 탐색
+            while (true) {
                 yy += dy[i];
                 xx += dx[i];
-
                 if (yy < 0 || xx < 0 || yy >= N || xx >= N) break;
-                if (visited[yy][xx]) return false;
+                if (now[yy][xx]) return false;
             }
         }
         return true;
