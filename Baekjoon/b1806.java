@@ -50,7 +50,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class Main {
+public class b1806 {
 
     private static int N, S;
     private static int[] arr;

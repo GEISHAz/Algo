@@ -1,7 +1,5 @@
 package Programmers;
 
-import java.util.Arrays;
-
 class p가장긴펠린드롬 {
     private int answer = 0;
 
