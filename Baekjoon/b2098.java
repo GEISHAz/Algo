@@ -1,8 +1,9 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
 
-import java.util.*;
-import java.io.*;
-
-public class Main {
+public class b2098 {
 
     static int N, INF = Integer.MAX_VALUE/2;
     static int[][] dist,dp;
