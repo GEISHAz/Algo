@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class Main {
+public class b2623 {
 
     static int N, M; // 가수 수 N , 보조 PD 수 M
     static ArrayList<Integer>[] singer;
