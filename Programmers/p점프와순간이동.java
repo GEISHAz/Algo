@@ -1,6 +1,8 @@
+package Programmers;
+
 import java.util.*;
 
-class Solution {
+class p점프와순간이동 {
     public int solution(int[] people, int limit) {
         int answer = 0, j = people.length-1;
         Arrays.sort(people);
