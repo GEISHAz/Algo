@@ -1,6 +1,8 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-public class Main {
+public class b1300 {
 
     static int N, M;
 
