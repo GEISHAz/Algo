@@ -71,5 +71,3 @@ class p_game_of_road_directions {
         }
     }
 }
-
-}
