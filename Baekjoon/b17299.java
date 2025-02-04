@@ -1,7 +1,11 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.StringTokenizer;
 
-public class Main {
+public class b17299 {
 
     static int N;
     static int[] numbers;
@@ -19,7 +23,7 @@ public class Main {
         for (int i = 0; i < N; i++) {
             sb.append(answer[i]).append(" ");
         }
-        System.out.println(sb.toString().trim()); // 마지막 공백 제거
+        System.out.println(sb.toString().trim());
     }
 
     private static void logic() {
@@ -28,11 +32,7 @@ public class Main {
             while (!stack.isEmpty() && checkNum[numbers[i]] >= checkNum[stack.peek()]) {
                 stack.pop();
             }
-            if (stack.isEmpty()) {
-                answer[i] = -1;
-            } else if (checkNum[numbers[i]] < checkNum[stack.peek()]) {
-                answer[i] = stack.peek();
-            }
+            answer[i] = (stack.isEmpty())? -1 : stack.peek();
             stack.push(numbers[i]);
         }
     }
