@@ -1,7 +1,9 @@
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
 
-public class Main {
+public class b1725 {
 
     static int N;
     static long answer;
