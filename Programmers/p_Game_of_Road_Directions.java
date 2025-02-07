@@ -3,7 +3,7 @@ package Programmers;
 import java.util.*;
 
 
-class p_game_of_road_directions {
+class p_Game_of_Road_Directions {
     int[][] result;
     int idx;
 

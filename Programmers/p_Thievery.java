@@ -1,8 +1,6 @@
 package Programmers;
 
-import java.util.*;
-
-class p_thievery {
+class p_Thievery {
 	int[] dp1,dp2;
 	public int solution(int[] money) {
 		int size = money.length;

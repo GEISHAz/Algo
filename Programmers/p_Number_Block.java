@@ -1,6 +1,6 @@
 package Programmers;
 
-class p_number_Block {
+class p_Number_Block {
 	private int isPrime(int n){
 		if(n == 1) return 0;
 		int max = 1;
