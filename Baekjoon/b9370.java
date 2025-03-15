@@ -1,7 +1,9 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
-import java.io.*;
 
-public class Main {
+public class b9370 {
 
     static int T,N,M,D; //교차로, 도로, 목적지 후보 갯수
     static int S,G,H;   //출발지, G와 H 사이의 도로를 지나감
