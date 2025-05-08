@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
-public class Main {
+public class b4195 {
 
     static int t, n;
     static HashMap<String, Integer> name;
