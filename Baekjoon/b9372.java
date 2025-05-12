@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-class Main {
+class b9372 {
     static int t;
 
     public static void main(String[] args) throws IOException {
