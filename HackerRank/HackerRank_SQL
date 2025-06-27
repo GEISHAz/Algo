@@ -16,3 +16,30 @@ FROM STATION
 ORDER BY LENGTH(CITY) DESC, CITY ASC
 LIMIT 1;
 
+#PrepareSQLBasic SelectWeather Observation Station 6
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY LIKE 'a%' OR
+CITY LIKE 'e%' OR
+CITY LIKE 'i%' OR
+CITY LIKE 'o%' OR
+CITY LIKE 'u%';
+
+#PrepareSQLBasic SelectWeather Observation Station 7
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY LIKE '%a' OR
+CITY LIKE '%e' OR
+CITY LIKE '%i' OR
+CITY LIKE '%o' OR
+CITY LIKE '%u';
+
+#PrepareSQLBasic SelectWeather Observation Station 8
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE LOWER(SUBSTRING(CITY,1,1)) IN ('a','e','i','o','u')
+AND LOWER(SUBSTRING(CITY,-1,1)) IN ('a','e','i','o','u');
+
