@@ -6,26 +6,25 @@ import java.util.Arrays;
 public class Main {
 
     static int N;
+    static int[] dp;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         N = Integer.parseInt(br.readLine());
-        int[] arr = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
-        int[] dp = new int[N];
-        Arrays.fill(dp, 1);
-
-        for(int i = 0 ; i < N ; i++){
-            for(int j = 0 ; j < i ; j++){
-                if(arr[j] > arr[i]){
-                    dp[i] = Math.max(dp[i], dp[j]+1);
-                }
-            }
+        dp = new int[N+1];
+        Arrays.fill(dp,Integer.MAX_VALUE);
+        dp[0] = 0;
+        for(int i = 1 ; i <= N ; i++){
+            dp[i] = dp[logic(i)]+1;
         }
-
-        int answer = 0;
-        for(int i = 0 ; i < N ; i++){
-            answer = Math.max(answer, dp[i]);
+        System.out.println(dp[N]);
+    }
+    private static int logic(int n){
+        if(dp[n] != Integer.MAX_VALUE) return dp[n];
+        int answer = Integer.MAX_VALUE;
+        for(int i = 1 ; Math.pow(i,2) <= n ; i++){
+            answer = Math.min(answer,logic((int)(n-Math.pow(i,2))));
         }
-        System.out.println(answer);
+        return answer;
     }
 }
