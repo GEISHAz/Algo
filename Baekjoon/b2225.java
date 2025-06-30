@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
+public class b2225 {
 
     static int N, M;
     static int[][] dp; // i까지의 정수 j개를 더해서 그합이 i 되는 경우의 수
