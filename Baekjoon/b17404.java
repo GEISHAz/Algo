@@ -47,7 +47,5 @@ public class b17404 {
         }
 
         System.out.println(answer);
-
-
     }
 }

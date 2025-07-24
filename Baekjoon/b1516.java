@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class Main {
+public class b1516 {
 
     static int N;
     static Queue<Integer> q = new LinkedList<>();
